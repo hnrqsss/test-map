@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import MapComponent from './mapcomponent'
+import './index.css'
 
 class App extends Component {
+  
+  state = {
+    origin: [-3.7282529,-38.5359288],
+    destination: [-3.7557806,-38.4907829],
+    zoom: 13
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <MapComponent origin={this.state.origin} destination={this.state.destination} zoom={this.state.zoom} />
+    )
   }
 }
 
-export default App;
+export default App
